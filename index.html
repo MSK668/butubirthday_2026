@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Happy Birthday, My BUTU</title>
+    <meta name="description" content="A little corner of the internet, made just for you." />
+
+    <!-- Google Fonts: Playfair Display (headings) + Lora (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- PRELOADER                     -->
+    <!-- ============================= -->
+    <div id="preloader" aria-hidden="true">
+        <div class="heart-beat"></div>
+        <p class="preloader-text">wrapping something up&hellip;</p>
+    </div>
+
+    <!-- ============================= -->
+    <!-- AMBIENT BACKGROUND CANVAS      -->
+    <!-- ============================= -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ============================= -->
+    <!-- HERO / ENVELOPE                -->
+    <!-- ============================= -->
+    <section id="hero" class="hero">
+
+        <div class="hero-copy">
+            <p class="eyebrow">a small envelope, a whole heart</p>
+            <h1 class="hero-title">For the girl<br>who has all my secrets</h1>
+            <p class="hero-hint">tap the seal to open it</p>
+        </div>
+
+        <button id="envelope" class="envelope" aria-label="Open your birthday letter">
+            <div class="envelope-3d">
+                <div class="envelope-back"></div>
+                <div class="envelope-letter-peek"></div>
+                <div class="envelope-flap"></div>
+                <div class="envelope-seal">
+                    <span>AS</span>
+                </div>
+            </div>
+        </button>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT (hidden until opened) -->
+    <!-- ============================= -->
+    <main id="main-content" class="main-content">
+
+        <!-- THE LETTER -->
+        <section class="letter-section">
+            <div class="section-kicker">
+                <span class="rule"></span>
+                <span>the letter</span>
+                <span class="rule"></span>
+            </div>
+
+            <div class="letter-glass">
+                <div class="letter-header">
+                    <span class="letter-date">September 25th</span>
+                    <span class="letter-heart">&#10084;</span>
+                </div>
+                <p id="typewriter-text" class="letter-body"></p>
+                <span id="typewriter-cursor" class="typewriter-cursor">|</span>
+
+                <div class="letter-signoff">
+                    <p>Forever yours,</p>
+                    <p class="signature">— BHUTU</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEMORY GALLERY -->
+        <section class="gallery-section">
+            <div class="section-kicker">
+                <span class="rule"></span>
+                <span>little moments</span>
+                <span class="rule"></span>
+            </div>
+
+            <h2 class="gallery-title">See how pretty you are</h2>
+
+            <div class="polaroid-field">
+
+                <figure class="polaroid p1" tabindex="0">
+                    <img src="images/im1.jpeg" alt="A favorite memory together" loading="lazy" />
+                    <figcaption>“Some people enter our lives quietly, then slowly become the people we never want to lose. ❤️”</figcaption>
+                </figure>
+
+                <figure class="polaroid p2" tabindex="0">
+                    <img src="images/im2.jpeg" alt="A favorite memory together" loading="lazy" />
+                    <figcaption>“Somehow, you became more than a friend; you became someone my heart will always hold close. 🫶”</figcaption>
+                </figure>
+
+                <figure class="polaroid p3" tabindex="0">
+                    <img src="images/im3.jpeg" alt="A favorite memory together" loading="lazy" />
+                    <figcaption>“Our memories may fade with time, but the feelings behind them will always stay with me. 🤍”</figcaption>
+                </figure>
+
+                <figure class="polaroid p4" tabindex="0">
+                    <img src="images/im4.jpeg" alt="A favorite memory together" loading="lazy" />
+                    <figcaption>“Thank you for every laugh, every conversation, and every little moment that made life brighter. 🌸”</figcaption>
+                </figure>
+
+                <figure class="polaroid p5" tabindex="0">
+                    <img src="images/im5.jpeg" alt="A favorite memory together" loading="lazy" />
+                    <figcaption>“Whatever happens in life, I hope you always remember that you will always have me beside you. ❤️”</figcaption>
+                </figure>
+
+                <figure class="polaroid p6" tabindex="0">
+                    <img src="images/im6.jpeg" alt="A favorite memory together" loading="lazy" />
+                    <figcaption>“Some friendships become memories; ours became a beautiful part of who I am today. ✨”</figcaption>
+                </figure>
+                <figure class="polaroid p7" tabindex="0">
+                    <img src="images/im7.jpeg" alt="A favorite memory together" loading="lazy" />
+                    <figcaption>“On your birthday, I just want you to know how grateful I am that life brought you to me. 🥹”</figcaption>
+                </figure>
+                <figure class="polaroid p8" tabindex="0">
+                    <img src="images/im8.jpeg" alt="A favorite memory together" loading="lazy" />
+                    <figcaption>“Happy Birthday, bestie. No matter where life takes us, you’ll always have a special place in my heart. ❤️🎂”</figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p>made with a stubborn amount of love &middot; happy birthday</p>
+        </footer>
+
+    </main>
+
+    <!-- ============================= -->
+    <!-- FLOATING MUSIC PLAYER          -->
+    <!-- ============================= -->
+    <button id="music-toggle" class="music-toggle" aria-label="Play our song" aria-pressed="false">
+        <div class="vinyl">
+            <div class="vinyl-center"></div>
+        </div>
+    </button>
+    <audio id="bg-audio" src="song/song1.mp3" loop preload="auto"></audio>
+
+    <!-- ============================= -->
+    <!-- CONFETTI CANVAS (full screen overlay) -->
+    <!-- ============================= -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
